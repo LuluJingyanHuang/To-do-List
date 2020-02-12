@@ -10,6 +10,10 @@ var editButton=document.createElement("button");
 // editButton.innerText='Edit';
 // editButton.className='edit';
 
+
+
+
+
 var list=document.getElementsByTagName('LI');
 var chcked
 var addTask=function(){
@@ -18,7 +22,7 @@ var addTask=function(){
   li.innerHTML=`
   <div class='item'>
   <label class="container">
-  <input type="checkbox">
+  <input type="checkbox" class='checkbox'>
   <span class="checkmark"></span></label>`
   +`<input class="extract" value='${extract}'></input>`
   // +`<button class='edit'>Edit</button>`
@@ -29,31 +33,54 @@ var addTask=function(){
 
 }
 
-$(document).on("click", ".container" , function() {
-            var element = $(this).parent().parent();
-            console.log(element);
-            $(this).parent().slideUp(
-              () => {
-                element.remove();
-              }
-            );
-        });
 
 add.addEventListener('click',addTask);
 newTask.addEventListener('keypress',function(e){
-  console.log(e);
   if (e.key==='Enter'){
     addTask();
   }
+
 });
 
 $(document).on("click", ".edit" , function(e) {
-            console.log(e);
-            var shit=e.target.previousSibling;
-            console.log(shit);
-            shit.setAttribute('contenteditable','true');
+            var entry=e.target.previousSibling;
+            entry.setAttribute('contenteditable','true');
 
         });
+
+
+
+// Experimenting with code right now
+// var complete=document.getElementById('list2');
+//
+//
+
+$(document).on("click", ".container" , function() {
+                    var element = $(this).parent().parent();
+                    $(this).remove();
+                    $('#list2').append(element);
+
+                    // Try to do if statement for when checkbox is checked
+                    // Loop through list
+
+
+                                // $(this).parent().slideUp(
+                                //   () => {
+                                //     element.remove();
+                                //   }
+                                // );
+                            });
+
+
+$(document).on("click", ".delete" , function() {
+                    var element = $(this).parent().parent();
+                    console.log(element);
+                    $(this).parent().slideUp(
+                      () => {
+                        element.remove();
+                      }
+                    );
+                });
 
 // var checkBox=document.getElementsByClassName('checkmark');
 // console.log(checkBox[0]);

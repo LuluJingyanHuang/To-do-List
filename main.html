@@ -12,16 +12,27 @@
 
 <img class='logo' src="logo.png" alt="logo">
 <div class="wrap">
-<div class='input'>
-  <input id='newTask' type="text" placeholder="Enter your task here ... ">
-  <button id='add' type="button" name="add">Add</button>
+    <div class='input'>
+      <input id='newTask' type="text" placeholder="Enter your task here ... ">
+      <button id='add' type="button" name="add">Add</button>
+    </div>
+    <div class="main">
+
+        <div class="todo">
+        <h2>To-do</h2>
+        <ul id='list1'>
+        </ul>
+        </div>
+
+        <div class="completed">
+          <h2>Completed Tasks</h2>
+          <ul id='list2'>
+          </ul>
+
+        </div>
+    </div>
 </div>
-<div class="todo">
-<h2>To-do</h2>
-<ul id='list1'>
-</ul>
-</div>
-</div>
+
   </body>
 
   <script src="app.js"></script>

@@ -49,13 +49,16 @@ input{
 
 .todo{
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-#list1 {
+#list1,
+#list2 {
   list-style: none;
   font-size: 1.5em;
   line-height: 1.5em;
   padding-left: 0px;
+  overflow-wrap: break-word;
 }
 
 .item{
@@ -176,4 +179,14 @@ input{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.completed input {
+    padding-left:40px;
+    color: grey;
+    text-decoration: line-through;
+}
+
+.completed .delete {
+  color:grey;
 }
